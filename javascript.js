@@ -1,4 +1,4 @@
-var map = L.map('map').setView([47.037872, -122.900696], 13);
+var map = L.map('map').setView([51.505, -0.09], 13);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -31,7 +31,6 @@ function createFormPopup() {
       '<h3>User Name:</h3><input type="text" id="input_name"><br>' +
       '<p><label for="Enjoyment">Eli\'s Enjoyment (1-bad, 3-good)</label></p>' +
       '<input type="range" id="Enjoyment" name="Enjoyment" min="1" max="3"><br>' +
-      // '<p><label for="Date">Date of Survey </label></p>'
       '<div>' +
       '<input type="Date" value="date" id="Date"><br>' +
       '<p><label for="Date">Date of Survey </label></p>' +
@@ -91,25 +90,20 @@ map.addEventListener("draw:created", function(e) {
 
        function setData(e) {
            if(e.target && e.target.id == "submit") {
-               // Get user name and description
                var locationname = document.getElementById("input_name").value;
                var enteredDescription = document.getElementById("input_desc").value;
-               // Print user name and description
                console.log(enteredUsername);
                console.log(enteredDescription);
-               // Get and print GeoJSON for each drawn layer
                drawnItems.eachLayer(function(layer) {
                    var drawing = JSON.stringify(layer.toGeoJSON().geometry);
                    console.log(drawing);
                });
-               // Clear drawn items layer
                drawnItems.closePopup();
                drawnItems.clearLayers();
            }
        }
 
        document.addEventListener("click", setData);
-//Makes pop-up close if shapes are deleted
        map.addEventListener("draw:editstart", function(e) {
     drawnItems.closePopup();
 });
@@ -127,7 +121,6 @@ map.addEventListener("draw:deletestop", function(e) {
 
 function setData(e) {
     if(e.target && e.target.id == "submit") {
-        // Get user name and description
          var enteredPark = document.getElementById("input_desc").value;
          var enteredUser = document.getElementById("input_name").value;
          var enteredEnjoyment = document.getElementByID('Enjoyment').value;
@@ -140,7 +133,6 @@ function setData(e) {
          var enteredSlide = document.getElementById("Slide").value;
          var enteredSwings = document.getElementById("Swings").value;
          var enteredJungle = document.getElementByID('Jungle').value;
-        // Print user name and description
           console.log(enteredPark);
           console.log(enteredUser);
           console.log(enteredEnjoyment);
@@ -153,12 +145,10 @@ function setData(e) {
           console.log(enteredSlide);
           console.log(enteredSwings);
           console.log(enteredJungle);
-        // Get and print GeoJSON for each drawn layer
         drawnItems.eachLayer(function(layer) {
             var drawing = JSON.stringify(layer.toGeoJSON().geometry);
             console.log(drawing);
         });
-        // Clear drawn items layer
         drawnItems.closePopup();
         drawnItems.clearLayers();
     }
@@ -183,22 +173,14 @@ map.addEventListener("draw:deletestop", function(e) {
 
 function setData(e) {
     if(e.target && e.target.id == "submit") {
-        // Get user name and description
-        	// CHANGE THE VAR NAMES TO SOMETHING THAT MAKES SENSE FOR YOUR FORM
-        	// CHANGE THE ELEMENT IDs TO MATCH THE IDs YOU GAVE YOUR FORM INPUTS IN STEP 6.2
-        	// INSERT ADDITIONAL VARS AND .getElementById STATEMENTS FOR EACH OF YOUR FORM INPUTS
         var enteredUsername = document.getElementById("input_name").value;
         var enteredDescription = document.getElementById("input_desc").value;
-        // Print user name and description
-        	// LOG TO THE CONSOLE ALL OF THE VARIABLES THAT HOLD THE INPUT VALUES FOR YOUR FORM
         console.log(enteredUsername);
         console.log(enteredDescription);
-        // Get and print GeoJSON for each drawn layer
         drawnItems.eachLayer(function(layer) {
             var drawing = JSON.stringify(layer.toGeoJSON().geometry);
             console.log(drawing);
         });
-        // Clear drawn items layer
         drawnItems.closePopup();
         drawnItems.clearLayers();
     }

@@ -3,34 +3,12 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: lightgreen;
-    font: 42;
     font-family: 'Trebuchet MS', sans-serif;
+    text-align: center;
 }
 
-h2 {
-  text-align: center;
-}
-
-h3 {
-  font: 42;
-  font-family: 'Trebuchet MS', sans-serif;
-}
-
-.column {
-  float: left;
-  width: 24.5%;
-  padding: 1px;
-}
-
-/* Clear floats after image containers */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-img {
-  width: 100%;
+p {
+  font-size: 32;
 }
 
 #map {
@@ -42,4 +20,19 @@ form {
   font-size: 14;
    font-family: 'Trebuchet MS', sans-serif;
    line-height: 1.8;
+}
+.column {
+  float: left;
+  width: 24.5%;
+  padding: 1px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+img {
+  width: 100%;
 }
