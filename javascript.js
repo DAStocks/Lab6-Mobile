@@ -24,6 +24,14 @@ new L.Control.Draw({
     }
 }).addTo(map);
 
+map.addEventListener("draw:created", function(e) {
+    e.layer.addTo(drawnItems);
+    drawnItems.eachLayer(function(layer) {
+        var geojson = JSON.stringify(layer.toGeoJSON().geometry);
+        console.log(geojson);
+    });
+});
+
 function createFormPopup() {
     var popupContent =
     '<form>' +
@@ -80,13 +88,13 @@ map.addEventListener("draw:created", function(e) {
     createFormPopup();
 });
 
-map.addEventListener("draw:created", function(e) {
-    e.layer.addTo(drawnItems);
-    drawnItems.eachLayer(function(layer) {
-        var geojson = JSON.stringify(layer.toGeoJSON().geometry);
-        console.log(geojson);
-    });
-});
+// map.addEventListener("draw:created", function(e) {
+//     e.layer.addTo(drawnItems);
+//     drawnItems.eachLayer(function(layer) {
+//         var geojson = JSON.stringify(layer.toGeoJSON().geometry);
+//         console.log(geojson);
+//     });
+// });
 
 document.addEventListener("click", setData);
 
