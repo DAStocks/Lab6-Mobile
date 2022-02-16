@@ -88,63 +88,34 @@ map.addEventListener("draw:created", function(e) {
     });
 });
 
-       function setData(e) {
-           if(e.target && e.target.id == "submit") {
-               var locationname = document.getElementById("input_name").value;
-               var enteredDescription = document.getElementById("input_desc").value;
-               console.log(enteredUsername);
-               console.log(enteredDescription);
-               drawnItems.eachLayer(function(layer) {
-                   var drawing = JSON.stringify(layer.toGeoJSON().geometry);
-                   console.log(drawing);
-               });
-               drawnItems.closePopup();
-               drawnItems.clearLayers();
-           }
-       }
-
-       document.addEventListener("click", setData);
-       map.addEventListener("draw:editstart", function(e) {
-    drawnItems.closePopup();
-});
-map.addEventListener("draw:deletestart", function(e) {
-    drawnItems.closePopup();
-});
-map.addEventListener("draw:editstop", function(e) {
-    drawnItems.openPopup();
-});
-map.addEventListener("draw:deletestop", function(e) {
-    if(drawnItems.getLayers().length > 0) {
-        drawnItems.openPopup();
-    }
-});
+document.addEventListener("click", setData);
 
 function setData(e) {
     if(e.target && e.target.id == "submit") {
-         var enteredPark = document.getElementById("input_desc").value;
-         var enteredUser = document.getElementById("input_name").value;
-         var enteredEnjoyment = document.getElementByID('Enjoyment').value;
-         var enteredDate = document.getElementByID('Date').value;
-         var enteredtraffic = document.getElementById("traffic").value;
-         var enteredDistance = document.getElementById("Distance").value;
-         var enteredLocation = document.getElementByID('Location').value;
-         var enteredFountain = document.getElementByID('Fountain').value;
-         var enteredRestroom = document.getElementByID('Restroom').value;
-         var enteredSlide = document.getElementById("Slide").value;
-         var enteredSwings = document.getElementById("Swings").value;
-         var enteredJungle = document.getElementByID('Jungle').value;
-          console.log(enteredPark);
-          console.log(enteredUser);
-          console.log(enteredEnjoyment);
-          console.log(enteredDate);
-          console.log(enteredtraffic);
-          console.log(enteredDistance);
-          console.log(enteredLocation);
-          console.log(enteredFountain);
-          console.log(enteredRestroom);
-          console.log(enteredSlide);
-          console.log(enteredSwings);
-          console.log(enteredJungle);
+      var locationName = document.getElementById("input_desc").value;
+      var enteredUser = document.getElementById("input_name").value;
+      var enteredEnjoyment = document.getElementById('Enjoyment').value;
+      var enteredDate = document.getElementById('Date').value;
+      var enteredtraffic = document.getElementById("traffic").value;
+      var enteredDistance = document.getElementById("Distance").value;
+      var enteredLocation = document.getElementById('Location').value;
+      var enteredFountain = document.getElementById('Fountain').value;
+      var enteredRestroom = document.getElementById('Restroom').value;
+      var enteredSlide = document.getElementById("Slide").value;
+      var enteredSwings = document.getElementById("Swings").value;
+      var enteredJungle = document.getElementById('Jungle').value;
+      console.log(locationName);
+      console.log(enteredUser);
+      console.log(enteredEnjoyment);
+      console.log(enteredDate);
+      console.log(enteredtraffic);
+      console.log(enteredDistance);
+      console.log(enteredLocation);
+      console.log(enteredFountain);
+      console.log(enteredRestroom);
+      console.log(enteredSlide);
+      console.log(enteredSwings);
+      console.log(enteredJungle);
         drawnItems.eachLayer(function(layer) {
             var drawing = JSON.stringify(layer.toGeoJSON().geometry);
             console.log(drawing);
@@ -153,8 +124,6 @@ function setData(e) {
         drawnItems.clearLayers();
     }
 }
-
-document.addEventListener("click", setData);
 
 map.addEventListener("draw:editstart", function(e) {
     drawnItems.closePopup();
@@ -170,18 +139,3 @@ map.addEventListener("draw:deletestop", function(e) {
         drawnItems.openPopup();
     }
 });
-
-function setData(e) {
-    if(e.target && e.target.id == "submit") {
-        var enteredUsername = document.getElementById("input_name").value;
-        var enteredDescription = document.getElementById("input_desc").value;
-        console.log(enteredUsername);
-        console.log(enteredDescription);
-        drawnItems.eachLayer(function(layer) {
-            var drawing = JSON.stringify(layer.toGeoJSON().geometry);
-            console.log(drawing);
-        });
-        drawnItems.closePopup();
-        drawnItems.clearLayers();
-    }
-}
