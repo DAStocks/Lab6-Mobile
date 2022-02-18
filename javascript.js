@@ -45,7 +45,7 @@ function createFormPopup() {
       '</div>' +
       '<p>Issues with location:</p>' +
       '<div>' +
-      '<input type="checkbox" id="traffic" name="traffic" checked>' +
+      '<input type="checkbox" id="Traffic" name="traffic" checked>' +
       '<label for="traffic">Traffic</label>' +
       '</div>' +
       '<div>' +
@@ -98,25 +98,35 @@ map.addEventListener("draw:created", function(e) {
 
 document.addEventListener("click", setData);
 
+function checkboxCheck(a){
+var ele = document.getElementsByName(a)
+for(i = 0; i < ele.length; i++) {
+               if(ele[i].checked) {
+                   return ele[i].id
+                 }
+              else {return null}
+           }
+}
+
 function setData(e) {
     if(e.target && e.target.id == "submit") {
       var locationName = document.getElementById("input_desc").value;
       var enteredUser = document.getElementById("input_name").value;
       var enteredEnjoyment = document.getElementById('Enjoyment').value;
       var enteredDate = document.getElementById('Date').value;
-      var enteredtraffic = document.getElementById("traffic").value;
-      var enteredDistance = document.getElementById("Distance").value;
-      var enteredLocation = document.getElementById('Location').value;
-      var enteredFountain = document.getElementById('Fountain').value;
-      var enteredRestroom = document.getElementById('Restroom').value;
-      var enteredSlide = document.getElementById("Slide").value;
-      var enteredSwings = document.getElementById("Swings").value;
-      var enteredJungle = document.getElementById('Jungle').value;
+      var enteredTraffic = checkboxCheck('Traffic');
+      var enteredDistance = checkboxCheck('Distance');
+      var enteredLocation = checkboxCheck('Location');
+      var enteredFountain = checkboxCheck('Fountain');
+      var enteredRestroom = checkboxCheck('Restroom');
+      var enteredSlide = checkboxCheck('Slide');
+      var enteredSwings = checkboxCheck('Swings');
+      var enteredJungle = checkboxCheck('Jungle');
       console.log(locationName);
       console.log(enteredUser);
       console.log(enteredEnjoyment);
       console.log(enteredDate);
-      console.log(enteredtraffic);
+      console.log(enteredTraffic);
       console.log(enteredDistance);
       console.log(enteredLocation);
       console.log(enteredFountain);
