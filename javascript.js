@@ -45,7 +45,7 @@ function createFormPopup() {
       '</div>' +
       '<p>Issues with location:</p>' +
       '<div>' +
-      '<input type="checkbox" id="Traffic" name="traffic" checked>' +
+      '<input type="checkbox" id="Traffic" name="Traffic" checked>' +
       '<label for="traffic">Traffic</label>' +
       '</div>' +
       '<div>' +
@@ -77,7 +77,7 @@ function createFormPopup() {
       '<input type="checkbox" id="Jungle" name="Jungle">' +
       '<label for="Jungle">Jungle Gym</label>' +
       '</div>' +
-      '<input type="button" value="Submit" id="submit">' +
+      '<input type="button" value="Submit" id="Submit">' +
 
     '</form>'
     drawnItems.bindPopup(popupContent).openPopup();
