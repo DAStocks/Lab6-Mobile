@@ -40,9 +40,6 @@ function createFormPopup() {
       '<p><label for="Enjoyment">Eli\'s Enjoyment (1-bad, 3-good)</label></p>' +
       '<input type="range" id="Enjoyment" name="Enjoyment" min="1" max="3"><br>' +
       '<div>' +
-      '<input type="Date" value="Date" id="Date"><br>' +
-      '<p><label for="Date">Date of Survey </label></p>' +
-      '</div>' +
       '<p>Issues with location:</p>' +
       '<div>' +
       '<input type="checkbox" id="Traffic" name="Traffic" checked>' +
@@ -88,13 +85,13 @@ map.addEventListener("draw:created", function(e) {
     createFormPopup();
 });
 
-// map.addEventListener("draw:created", function(e) {
-//     e.layer.addTo(drawnItems);
-//     drawnItems.eachLayer(function(layer) {
-//         var geojson = JSON.stringify(layer.toGeoJSON().geometry);
-//         console.log(geojson);
-//     });
-// });
+map.addEventListener("draw:created", function(e) {
+    e.layer.addTo(drawnItems);
+    drawnItems.eachLayer(function(layer) {
+        var geojson = JSON.stringify(layer.toGeoJSON().geometry);
+        console.log(geojson);
+    });
+});
 
 document.addEventListener("click", setData);
 
@@ -113,7 +110,6 @@ function setData(e) {
       var locationName = document.getElementById("input_desc").value;
       var enteredUser = document.getElementById("input_name").value;
       var enteredEnjoyment = document.getElementById('Enjoyment').value;
-      var enteredDate = document.getElementById('Date').value;
       var enteredTraffic = checkboxCheck('Traffic');
       var enteredDistance = checkboxCheck('Distance');
       var enteredLocation = checkboxCheck('Location');
@@ -125,7 +121,6 @@ function setData(e) {
       console.log(locationName);
       console.log(enteredUser);
       console.log(enteredEnjoyment);
-      console.log(enteredDate);
       console.log(enteredTraffic);
       console.log(enteredDistance);
       console.log(enteredLocation);
