@@ -40,7 +40,7 @@ function createFormPopup() {
       '<p><label for="Enjoyment">Eli\'s Enjoyment (1-bad, 3-good)</label></p>' +
       '<input type="range" id="Enjoyment" name="Enjoyment" min="1" max="3"><br>' +
       '<div>' +
-      '<input type="Date" value="date" id="Date"><br>' +
+      '<input type="Date" value="Date" id="Date"><br>' +
       '<p><label for="Date">Date of Survey </label></p>' +
       '</div>' +
       '<p>Issues with location:</p>' +
@@ -49,11 +49,11 @@ function createFormPopup() {
       '<label for="traffic">Traffic</label>' +
       '</div>' +
       '<div>' +
-      '<input type="checkbox" id="Distance" name="Distance">' +
+      '<input type="checkbox" id="Distance" name="Distance" checked>' +
       '<label for ="Distance">Distance</label>' +
       '</div>' +
       '<div>' +
-      '<input type="checkbox" id="Location" name="Location">' +
+      '<input type="checkbox" id="Location" name="Location" checked>' +
       '<label for="Location">Location</label>' +
       '</div>' +
       '<p>Amenities:</p>' +
@@ -70,14 +70,14 @@ function createFormPopup() {
       '<label for="Slide">Slides</label>' +
       '</div>' +
       '<div>' +
-      '<input type="checkbox" id="Swings" name="Swings">' +
+      '<input type="checkbox" id="Swings" name="Swings" checked>' +
       '<label for ="Swings">Swings</label>' +
       '</div>' +
       '<div>' +
-      '<input type="checkbox" id="Jungle" name="Jungle">' +
+      '<input type="checkbox" id="Jungle" name="Jungle" checked>' +
       '<label for="Jungle">Jungle Gym</label>' +
       '</div>' +
-      '<input type="button" value="Submit" id="Submit">' +
+      '<input type="button" value="Submit" id="submit">' +
 
     '</form>'
     drawnItems.bindPopup(popupContent).openPopup();
